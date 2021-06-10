@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetworkingDBProject.MainPage"
+             Title="COVID-19   Global Statistics">
+    <RelativeLayout>
+        <Image x:Name="poster" Source="https://www.ctvnews.ca/polopoly_fs/1.4893910.1586795726!/httpImage/image.png_gen/derivatives/landscape_800/image.png" Aspect="AspectFill"
+			RelativeLayout.WidthConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Width,
+				Factor=1
+				}"
+
+			RelativeLayout.HeightConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Height,
+				Factor=0.5
+				}"
+		/>
+        <StackLayout Padding="20"
+			RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=poster,
+				Property=Height,
+				Factor=1
+				}" 
+			>
+             <Grid Padding="2" RowSpacing="0" ColumnSpacing="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" Text="NewConfirmed"  />
+                <Label Grid.Row="0" Grid.Column="1"  x:Name="NewConfirmed"  />
+
+                <Label Grid.Row="1" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" Text="TotalConfirmed"  />
+                <Label Grid.Row="1" Grid.Column="1"  x:Name="TotalConfirmed"  />
+
+                <Label Grid.Row="2" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" Text="NewDeaths" />
+                <Label Grid.Row="2" Grid.Column="1"  x:Name="NewDeaths" />
+
+                <Label Grid.Row="3" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" Text="TotalDeaths" />
+                <Label Grid.Row="3" Grid.Column="1"  x:Name="TotalDeaths" />
+
+                <Label Grid.Row="4" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" Text="NewRecovered" />
+                <Label Grid.Row="4" Grid.Column="1"  x:Name="NewRecovered" />
+
+                <Label Grid.Row="5" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" Text="TotalRecovered" />
+                <Label Grid.Row="5" Grid.Column="1"  x:Name="TotalRecovered" />
+
+                <Label Grid.Row="6" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" Text="Date" />
+                <Label Grid.Row="6" Grid.Column="1"  x:Name="Date" />
+
+            </Grid>
+            <Button Text="More Information" WidthRequest="100"  BackgroundColor="Red" TextColor="White" HeightRequest="50" FontAttributes="Bold" FontSize="Medium" Clicked="more_Info"/>
+           
+
+        </StackLayout>
+
+    </RelativeLayout>
+
+</ContentPage>

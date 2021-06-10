@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetworkingDBProject.World"
+             Title="COVID-19 Country Statistics">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="detailList" ItemSelected="detailList_ItemSelected" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="0,13" >
+                            <StackLayout >
+                                <Grid Padding="0,5,5,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                    </Grid.ColumnDefinitions>
+                                        <Button Grid.Column="0"  Text="{Binding CountryCode}"  BackgroundColor="LightCoral" TextColor="White" FontAttributes="Bold" FontSize="Large" BorderRadius="100"/>
+                                    <StackLayout Grid.Column="1">
+                                        <Grid>
+                                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextColor="DarkBlue" FontAttributes="Bold" FontSize="Medium" Text="{Binding Country}"  />
+
+                                            <Label Grid.Row="1" Grid.Column="0" FontAttributes="Bold"  Text="Total" />
+                                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding TotalConfirmed}" />
+
+                                            <Label Grid.Row="1" Grid.Column="2" FontAttributes="Bold"   Text=" Total Death" />
+                                            <Label Grid.Row="1" Grid.Column="3" Text="{Binding TotalDeaths}" />
+
+                                            <Label Grid.Row="2" Grid.Column="0" FontAttributes="Bold"  Text="Recovered" />
+                                            <Label Grid.Row="2" Grid.Column="1" Text="{Binding TotalRecovered}" />
+
+                                            <Label Grid.Row="2" Grid.Column="2" FontAttributes="Bold"  Text="New Cases" />
+                                            <Label Grid.Row="2" Grid.Column="3" Text="{Binding NewConfirmed}" />
+                                        </Grid>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

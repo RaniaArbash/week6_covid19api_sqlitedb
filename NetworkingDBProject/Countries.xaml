@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetworkingDBProject.Countries"
+             Title="COVID-19 Report By Province">
+    <ContentPage.Content>
+        <ListView x:Name="detailList" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="4,13" >
+
+                            <Grid>
+                                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" FontAttributes="Bold" FontSize="Medium" TextColor="Blue" Text="{ Binding Province}"  />
+
+                                <Label Grid.Row="1" Grid.Column="0" FontAttributes="Bold"  Text="Total" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Confirmed}" />
+
+                                <Label Grid.Row="1" Grid.Column="2" FontAttributes="Bold"   Text=" Total Death" />
+                                <Label Grid.Row="1" Grid.Column="3" Text="{Binding Deaths}" />
+
+                                <Label Grid.Row="2" Grid.Column="0" FontAttributes="Bold"  Text="Recovered" />
+                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Recovered}" />
+
+                                <Label Grid.Row="2" Grid.Column="2" FontAttributes="Bold"  Text="New Cases" />
+                                <Label Grid.Row="2" Grid.Column="3" Text="{Binding Active}" />
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetworkingDBProject.Options"
+             Title="COVID-19 Information">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Image x:Name="poster" Source="https://www.newmarket.ca/TownGovernment/PublishingImages/Public%20Notice%20Images/COVID_News%20%2B%20Notice.jpg" Aspect="AspectFill"
+			RelativeLayout.WidthConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Width,
+				Factor=1
+				}"
+
+			RelativeLayout.HeightConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Height,
+				Factor=0.5
+				}"
+		/>
+            <StackLayout Padding="20"
+			RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=poster,
+				Property=Height,
+				Factor=1
+				}" 
+			>
+                <Grid Padding="10" RowSpacing="15" ColumnSpacing="0" >
+
+                    <Button Grid.Row="0" Grid.Column="0" Text="Covid-19 Detail View" WidthRequest="100" BackgroundColor="Red" TextColor="white" HeightRequest="60" FontAttributes="Bold" FontSize="Medium" Clicked="View_By_Country"/>
+                    <Button Grid.Row="1" Grid.Column="0" Text="Vaccine's Detail" FontAttributes="Bold" FontSize="Medium"  BackgroundColor="LightBlue" Clicked="Vaccine_Info"/>
+                    <Button Grid.Row="2" Grid.Column="0" Text="History" FontAttributes="Bold" FontSize="Medium" BackgroundColor="LightGreen" Clicked="Search_History"/>
+
+                </Grid>
+
+            </StackLayout>
+
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
