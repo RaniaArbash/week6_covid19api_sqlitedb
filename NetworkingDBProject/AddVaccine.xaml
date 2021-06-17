@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetworkingDBProject.AddVaccine"
+             Title="Add New Vaccine">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Image x:Name="poster" Source="https://images.glaciermedia.ca/polopoly_fs/1.24282892.1613516700!/fileImage/httpImage/image.jpg_gen/derivatives/landscape_804/covid-vaccine.jpg" Aspect="AspectFill"
+			RelativeLayout.WidthConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Width,
+				Factor=1
+				}"
+
+			RelativeLayout.HeightConstraint="{ConstraintExpression
+				Type=RelativeToParent,
+				Property=Height,
+				Factor=0.5
+				}"
+		/>
+            <StackLayout Padding="20"
+			RelativeLayout.YConstraint="{ConstraintExpression
+				Type=RelativeToView,
+				ElementName=poster,
+				Property=Height,
+				Factor=1
+				}" 
+			>
+                <Grid>
+                    <Entry Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" x:Name="Name" Placeholder="Vaccine Name" Text=""/>
+                    <Label Text="On Demand" Grid.Column="0" Grid.Row="1"/>
+                    <Switch IsToggled="True" x:Name="Demand"  Grid.Column="1" Grid.Row="1" Toggled="Demand_Toggled"  />
+                    <Label Text="In Stock" Grid.Column="0" Grid.Row="2"/>
+                    <Switch IsToggled="True" x:Name="InStock" Grid.Column="1" Grid.Row="2" Toggled="InStock_Toggled"  />
+                    <Button Text="Add Vaccine" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" BackgroundColor="LightGreen" Clicked="Button_Clicked"/>
+                </Grid>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

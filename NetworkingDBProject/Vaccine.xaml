@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetworkingDBProject.Vaccine"
+             Padding="10"
+             Title="COVID-19 Vaccine Information"
+             >
+    <ContentPage.Content>
+        <RelativeLayout Padding="10">
+            <StackLayout
+            HorizontalOptions="Fill"
+            VerticalOptions="Center"
+            RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Height,
+            Factor=0.5}
+            "
+            RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Width,
+            Factor=1}">
+               
+                <Grid >
+                    <Button Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="2" BackgroundColor="Red"  HeightRequest="60" FontAttributes="Bold" FontSize="Medium" TextColor="White" Text="Add New Vaccine" Clicked="addNewVaccine"/>
+                    <Entry Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" x:Name="Name" Placeholder="Vaccine Name" Text="{Binding Name}"/>
+                    <Label Text="On Demand" FontAttributes="Bold" FontSize="Medium" TextColor="black" Grid.Column="0" Grid.Row="2"/>
+                    <Switch IsToggled="{Binding Demand}"  Grid.Column="1" Grid.Row="2" x:Name="Demand"   />
+                    <Label Text="In Stock" FontAttributes="Bold" FontSize="Medium" TextColor="black" Grid.Column="0" Grid.Row="3"/>
+                    <Switch IsToggled="{Binding Instock}"  Grid.Column="1" Grid.Row="3" x:Name="InStock"   />
+                    <Button Grid.Row="4" Grid.Column="0" BackgroundColor="LightGreen"  Text="Update" Clicked="updateDB"/>
+
+                    <Button Text="Delete" Grid.Column="1" Grid.Row="4"  BackgroundColor="LightGreen" Clicked="deleteFromDB"/>
+
+                </Grid>
+
+            </StackLayout>
+            <ListView  
+            x:Name="veccinesListView" 
+            ItemSelected="Item_Selected"
+            
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent
+            ,Property=Height,Factor=0.5}"
+            >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HorizontalOptions="StartAndExpand">
+
+                                <Grid Padding="1,5,1,1">
+
+                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" x:Name="Name" FontAttributes="Bold" FontSize="Medium" TextColor="blue"  />
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding statusDemand}" FontAttributes="Bold" x:Name="OnDemand" TextColor="Black"  />
+                                    <Label Grid.Row="0" Grid.Column="2" Text="{Binding statusInStock}" FontAttributes="Bold" x:Name="InStock" TextColor="Black"  />
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
